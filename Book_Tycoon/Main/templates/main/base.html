@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Noblesville Public Library</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+</head>
+<body>
+<div id = "wrapper">
+	<header>
+		<h1>Noblesville Public Library</h1>
+	</header>
+	<nav>
+	
+	<a href="index.html">Home</a>&nbsp;&nbsp;
+	<a href="checkout.html">Checkout</a>&nbsp;&nbsp; 
+	<a href="reviews.html">Reviews</a>&nbsp;&nbsp;
+	<a href="login.html" class = "login_button">Login</a>&nbsp;&nbsp;
+	
+	
+	</nav>	
+	<div id = "mainblock">
+	{% block content %}
+        {% endblock %} 
+	</div>
+	
+<main>
+	
+</main>
+<footer>
+	Copyright © 2023
+	<br><a href = "https://github.com/Donner-von-Swabia/SDEV-220_Final-Project">Github Repo</a>
+</footer>
+	
+</div>
+</body>
+</html>
