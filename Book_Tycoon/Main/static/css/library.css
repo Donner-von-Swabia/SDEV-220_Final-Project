@@ -70,3 +70,13 @@ a{
 .login_button{
 	float: right;
 }
+.login_greeting{
+	float: right;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: #EF8A17;
+}
+button{
+	padding-left: 2em;
+	padding-right: 2em;
+}

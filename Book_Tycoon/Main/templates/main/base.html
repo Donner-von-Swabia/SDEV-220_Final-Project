@@ -13,15 +13,22 @@
 <div id = "wrapper">
 	<header>
 		<h1>Noblesville Public Library</h1>
+		{% if user.is_authenticated %}
+		
+		{% endif %}
 	</header>
 	<nav>
 	
-	<a href="index.html">Home</a>&nbsp;&nbsp;
-	<a href="checkout.html">Checkout</a>&nbsp;&nbsp; 
-	<a href="reviews.html">Reviews</a>&nbsp;&nbsp;
-	<a href="login.html" class = "login_button">Login</a>&nbsp;&nbsp;
-	
-	
+	<a href="{% url 'main'%}">Home</a>&nbsp;&nbsp;
+	<a href="{% url 'checkout'%}">Checkout</a>&nbsp;&nbsp; 
+	<a href="{% url 'reviews'%}">Reviews</a>&nbsp;&nbsp;
+	<!--Checks if the user is logged in and replaces the login button if they are with logout button-->
+		{% if user.is_authenticated %}
+			<span class = "login_greeting"> Logged in as: {{ user.username }}</span>
+  			<a href="{% url 'logout' %}" class = "login_button">Log Out</a>&nbsp;&nbsp;
+		{% else %}
+			<a href="{% url 'login'%}" class = "login_button">Login</a>&nbsp;&nbsp;
+		{% endif %}
 	</nav>	
 	<div id = "mainblock">
 	{% block content %}

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+admin.autodiscover()
 app_name='Book_Tycoon'
 urlpatterns = [
     path('admin/', admin.site.urls),
