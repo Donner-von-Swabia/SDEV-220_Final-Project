@@ -80,3 +80,11 @@ button{
 	padding-left: 2em;
 	padding-right: 2em;
 }
+.registrationcontainer{
+	background: #BBDEFB;
+	padding-left: 2em;
+	padding-right: 2em;
+	box-shadow:10px 5px 5px black;
+	
+	color: #000000;
+}

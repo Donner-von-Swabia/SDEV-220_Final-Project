@@ -3,6 +3,7 @@ from django.contrib import admin
 from .views import MainView
 from .views import Checkout
 from .views import Reviews
+from .views import register_request
 
 urlpatterns=[
     path('',MainView.as_view(), name='main'),
@@ -10,5 +11,6 @@ urlpatterns=[
     path('index.html',MainView.as_view(), name='main'),
     path('checkout.html',Checkout.as_view(), name='checkout'),
     path('reviews.html',Reviews.as_view(), name='reviews'),
-    path("accounts/", include("django.contrib.auth.urls"))
+    path("accounts", include("django.contrib.auth.urls")),
+    path("register", register_request, name="register")
 ]
