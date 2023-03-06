@@ -3,16 +3,18 @@ from django.views import View
 from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
+from .models import Book
 # Create your views here.
 
 class MainView(View):
-
+    
     def get(self,request):
         return render(request,'main/index.html')
 class Checkout(View):
-
+    
     def get(self,request):
-        return render(request,'main/checkout.html')
+        books = Book.objects.all().order_by('title').values()
+        return render(request,'main/checkout.html', {'books': books})
 class Reviews(View):
 
     def get(self,request):

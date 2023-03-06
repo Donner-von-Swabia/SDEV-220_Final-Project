@@ -28,6 +28,17 @@
         <span class="helptext">Enter the same password as before, for verification.</span>                   
 		<button class="btn btn-primary" type="submit">Register</button>
 	</form>
+	{% if messages %}
+	<ul class="messages">
+    	{% for message in messages %}
+    	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<p style = "color: red;">Registration Failed: {% endif %}
+        {{ message }}
+	</p>
+    	</li>
+    	{% endfor %}
+</ul>
+{% endif %}
 	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
 </div>
 
