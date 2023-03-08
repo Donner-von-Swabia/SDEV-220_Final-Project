@@ -11,3 +11,12 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+class Reviews(models.Model):
+    user = models.CharField(max_length=256)
+    published = models.DateField()
+    head = models.CharField(max_length=100)
+    body = models.TextField(max_length= 1000)
+
+    def __str__(self):
+        return self.user
