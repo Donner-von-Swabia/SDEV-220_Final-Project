@@ -11,7 +11,7 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
-
+    
 class Reviews(models.Model):
     user = models.CharField(max_length=256)
     published = models.DateField()
@@ -20,3 +20,10 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.user
+
+class Reserve(models.Model):
+    Reserve_id= models.IntegerField()
+    username=models.CharField(max_length=15)
+    pick_up= models.DateField()
+    book_id=models.IntegerField()
+    
