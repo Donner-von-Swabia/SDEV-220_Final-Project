@@ -22,8 +22,11 @@ class Reviews(models.Model):
         return self.user
 
 class Reserve(models.Model):
-    Reserve_id= models.IntegerField()
+    reserve_id= models.IntegerField()
     username=models.CharField(max_length=15)
     pick_up= models.DateField()
     book_id=models.IntegerField()
+
+    def __str__(self):
+        return self.reserve_id
     
