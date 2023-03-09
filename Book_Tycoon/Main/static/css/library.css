@@ -91,6 +91,13 @@ button{
 	padding-top: 2em;
 	background-color:#008148;
 }
+#comment{
+	padding-left: 0.5em;
+	padding-top: 0.5em;
+	padding-top: 0.3em;
+	background-color:#008148;
+	border-bottom: 2px solid white;
+}
 .registrationcontainer{
 	background: #BBDEFB;
 	padding-left: 2em;

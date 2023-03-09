@@ -12,10 +12,20 @@
 	<p>Book is in stock.</p>
 	<a href="{% url 'checkoutbook' pk=detailbook.pk %}">Checkout</a>
 	{% endif %}
-	{% if user.is_staff %}
+	{% if user.is_staff and detailbook.checkout %}
 	<a href="{% url 'uncheckoutbook' pk=detailbook.pk %}">Return</a>
 	{% endif %}
     </article>
 	<p>Add a review:</p>
-	<a href = "{% url 'add_review_to_book' %}"></a>
+	&nbsp;&nbsp;<a href = "{% url 'add_review_to_book' pk=detailbook.pk %}">Click Here</a>
+	{% for comment in book_reviews%}
+	<div id = "comment">
+	<h4>{{comment.user}}</h4>
+	<p>{{comment.body}}</p>
+	
+	</div>
+	
+	{%endfor%}
+
+	
 {% endblock %}

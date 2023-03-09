@@ -21,7 +21,6 @@
 	
 	<a href="{% url 'main'%}">Home</a>&nbsp;&nbsp;
 	<a href="{% url 'checkout'%}">Checkout</a>&nbsp;&nbsp; 
-	<a href="{% url 'reviews'%}">Reviews</a>&nbsp;&nbsp;
 	<!--Checks if the user is logged in and replaces the login button if they are with logout button-->
 		{% if user.is_authenticated %}
 			<span class = "login_greeting"> Logged in as: {{ user.username }}</span>
