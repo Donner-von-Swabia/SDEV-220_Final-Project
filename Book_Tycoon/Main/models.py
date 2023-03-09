@@ -19,8 +19,9 @@ class Reviews(models.Model):
     body = models.TextField(max_length= 1000)
 
     def __str__(self):
-        return self.user
+        return self.user + self.body
 
+#Reserve model is redundant as currently reservations are handled in book's properties
 class Reserve(models.Model):
     reserve_id= models.IntegerField()
     username=models.CharField(max_length=15)

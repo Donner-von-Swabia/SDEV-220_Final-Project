@@ -80,6 +80,17 @@ button{
 	padding-left: 2em;
 	padding-right: 2em;
 }
+#onebook a{
+	color: #EF8A17;
+}
+#onebook h2{
+	color: #EF8A17;
+}
+#onebook{
+	padding-left: 2em;
+	padding-top: 2em;
+	background-color:#008148;
+}
 .registrationcontainer{
 	background: #BBDEFB;
 	padding-left: 2em;

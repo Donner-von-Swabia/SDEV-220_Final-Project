@@ -1,11 +1,13 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<br>
 <div>
+	<p>Click on a book to view reviews and reserve for checkout.</p>
 	{% for book in books %}
-	<article>
+	<article id = "onebook">
 	<time>Published: {{book.publicationdate}}</time>
-	<h2>{{book.title}}</h2>
+	<h2><a href = "{% url 'detailandreview' pk=book.id %}">{{book.title}}</a></h2>
 	<h3>Authored by {{book.author}}</h3>
 	<p>{{book.bookdescription}}</p>
 	{% if book.checkout %}
@@ -17,5 +19,6 @@
 	</article>
 	{% endfor %}
 </div>
+<br>
 
 {% endblock %}

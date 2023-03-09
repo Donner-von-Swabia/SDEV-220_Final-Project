@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <article id = "onebook">
+	<time>Published: {{ detailbook.publicationdate }}</time>
+	<h2>{{ detailbook.title }}</h2>
+	<h3>Authored by {{detailbook.author}}</h3>
+	<p>{{ detailbook.bookdescription }}</p>
+	{% if detailbook.checkout %}
+	<p>Currently checked out by {{ detailbook.checkedoutuser }}</p>
+	{% else %}
+	<p>Book is in stock.</p>
+	<a href="{% url 'checkoutbook' pk=detailbook.pk %}">Checkout</a>
+	{% endif %}
+	{% if user.is_staff %}
+	<a href="{% url 'uncheckoutbook' pk=detailbook.pk %}">Return</a>
+	{% endif %}
+    </article>
+{% endblock %}
