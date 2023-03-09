@@ -16,4 +16,6 @@
 	<a href="{% url 'uncheckoutbook' pk=detailbook.pk %}">Return</a>
 	{% endif %}
     </article>
+	<p>Add a review:</p>
+	<a href = "{% url 'add_review_to_book' %}"></a>
 {% endblock %}

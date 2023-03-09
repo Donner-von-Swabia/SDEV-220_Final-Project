@@ -13,9 +13,8 @@ class Book(models.Model):
         return self.title
     
 class Reviews(models.Model):
+    book = models.ForeignKey('Book', on_delete=models.CASCADE, related_name='reviews')
     user = models.CharField(max_length=256)
-    published = models.DateField()
-    head = models.CharField(max_length=100)
     body = models.TextField(max_length= 1000)
 
     def __str__(self):
